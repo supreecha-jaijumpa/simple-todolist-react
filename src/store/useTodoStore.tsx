@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import { Task } from "../types/task";
 
-type TodoState = {
+type TodoStore = {
   todo: Task[];
   addTask: (task: Task) => void;
   updateTask: (task: Task) => void;
   clearCompleted: () => void;
 };
 
-const useTodoStore = create<TodoState>((set) => ({
+const useTodoStore = create<TodoStore>((set) => ({
   todo: [],
 
   addTask: (task) =>
