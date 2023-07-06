@@ -1,11 +1,11 @@
 import { FC, ChangeEvent } from "react";
 import { type Task as TaskType } from "../../../types/task";
-import { useTodo } from "../../../contexts/useTodo";
+import useTodoStore from "../../../store/useTodoStore";
 
 export type TaskProps = TaskType;
 
 const Task: FC<TaskProps> = ({ id, title, isCompleted }) => {
-  const { updateTask } = useTodo();
+  const { updateTask } = useTodoStore();
 
   const handleChange = (e: ChangeEvent) => {
     const updatedTask = {

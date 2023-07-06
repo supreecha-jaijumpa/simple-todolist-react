@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Task from "./task/Task";
 
-import { useTodo } from "../../contexts/useTodo";
+import useTodoStore from "../../store/useTodoStore";
 
 const TaskList: FC = () => {
-  const { todo } = useTodo();
+  const { todo } = useTodoStore();
 
   return (
     <ul className="m-0 p-0 list-none flex flex-col">

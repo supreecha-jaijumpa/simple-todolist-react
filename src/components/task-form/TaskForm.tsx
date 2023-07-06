@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useTodo } from "../../contexts/useTodo";
 import { generateUUID } from "../../utils/generateUUID";
+import useTodoStore from "../../store/useTodoStore";
 import { type Task } from "../../types/task";
 
 type Form = {
@@ -9,7 +9,7 @@ type Form = {
 };
 
 const TaskForm: FC = () => {
-  const { addTask } = useTodo();
+  const { addTask } = useTodoStore();
   const {
     register,
     handleSubmit,

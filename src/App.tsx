@@ -2,10 +2,10 @@ import { FC } from "react";
 import Card from "./components/card/Card";
 import TaskList from "./components/task-list/TaskList";
 import TaskForm from "./components/task-form/TaskForm";
-import { useTodo } from "./contexts/useTodo";
+import useTodoStore from "./store/useTodoStore";
 
 const App: FC = () => {
-  const { clearCompleted } = useTodo();
+  const { clearCompleted } = useTodoStore();
 
   return (
     <div className="flex justify-center items-center py-12">
