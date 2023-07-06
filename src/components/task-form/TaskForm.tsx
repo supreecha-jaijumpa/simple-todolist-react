@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { generateUUID } from "../../utils/generateUUID";
 import useTodoStore from "../../store/useTodoStore";
 import { type Task } from "../../types/task";
@@ -17,7 +17,7 @@ const TaskForm: FC = () => {
     reset,
   } = useForm<Form>();
 
-  const onSubmit: SubmitHandler<Form> = (data: Form) => {
+  const onSubmit = (data: Form) => {
     const task: Task = {
       id: generateUUID(),
       title: data.task,
